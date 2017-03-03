@@ -106,11 +106,11 @@
 #  [*mkhomedir*]
 #
 #  [*smartc*]
-#    Boolean to enable or disable SmartCard Authentication. 
+#    Boolean to enable or disable SmartCard Authentication.
 #    (Default: false)
 #
 #  [*smartcaction*]
-#    Boolean to determine SmartCard Removal Action. Values: True = Lock, False = Ignore 
+#    Boolean to determine SmartCard Removal Action. Values: True = Lock, False = Ignore
 #    (Default: false)
 #
 #  [*smartcrequire*]
@@ -299,21 +299,21 @@ class authconfig (
       }
 
       # Kerberos
-      if $krb5 {
+#      if $krb5 {
 
-        if !$krb5realm {
-          fail('The krb5realm parameter is required when krb5 set to true')
-        }
+#        if !$krb5realm {
+#          fail('The krb5realm parameter is required when krb5 set to true')
+#        }
 
-        if !$krb5kdc {
-          fail('The krb5kdc parameter is required when krb5 is set to true')
-        }
+#        if !$krb5kdc {
+#          fail('The krb5kdc parameter is required when krb5 is set to true')
+#        }
 
-        if !$krb5kadmin {
-          fail('The krb5kadmin parameter is required when krb5 is set to true')
-        }
-
-      }
+#        if !$krb5kadmin {
+#          fail('The krb5kadmin parameter is required when krb5 is set to true')
+#        }
+#
+#      }
 
       $krb_flg = $krb5 ? {
         true    => '--enablekrb5',
